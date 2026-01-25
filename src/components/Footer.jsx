@@ -110,12 +110,12 @@ const Footer = () => {
               <li className="flex items-start"> {/* Address item */}
                 <MapPin className="h-5 w-5 text-blue-400 mr-3 mt-1 flex-shrink-0" /> {/* Location icon */}
                 <span className="text-gray-400"> {/* Address text */}
-                  Westlands Business Centre<br />Nairobi, Kenya
+                  Ngara<br />Nairobi, Kenya
                 </span>
               </li>
               <li className="flex items-center"> {/* Phone item */}
                 <Phone className="h-5 w-5 text-blue-400 mr-3 flex-shrink-0" /> {/* Phone icon */}
-                <span className="text-gray-400">+254 723 456 789</span> {/* Phone number */}
+                <span className="text-gray-400">+254 797 801 396, +254 736 014 223</span> {/* Phone number */}
               </li>
               <li className="flex items-center"> {/* Email item */}
                 <Mail className="h-5 w-5 text-blue-400 mr-3 flex-shrink-0" /> {/* Email icon */}

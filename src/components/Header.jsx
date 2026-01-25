@@ -45,7 +45,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <Phone className="h-4 w-4 text-blue-600" />
-              <span className="text-sm text-gray-700">+254 723 456 789</span>
+              <span className="text-sm text-gray-700">+254 797 801 396, +254 736 014 223</span>
             </div>
             <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
               Get Quote
@@ -73,7 +73,7 @@ const Header = () => {
               <div className="pt-4 border-t">
                 <div className="flex items-center space-x-2 mb-2">
                   <Phone className="h-4 w-4 text-blue-600" />
-                  <span className="text-sm text-gray-700">+254 723 456 789</span>
+                  <span className="text-sm text-gray-700">+254 797 801 396, +254 736 014 223</span>
                 </div>
                 <button className="w-full bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
                   Get Quote
