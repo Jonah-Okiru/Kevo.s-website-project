@@ -16,8 +16,8 @@ const Header = () => {
             <a href="/" className="flex items-center space-x-2"> {/* Make logo clickable */}
               <img 
                 src={logo} // Use imported logo
-                alt="Mistcool Africa Logo" // Alt text for accessibility
-                className="h-12 w-auto" // Adjust height, width auto for aspect ratio
+                alt="Climate Care Solutions Logo" // Alt text for accessibility
+                className="h-16 w-auto" // Adjust height, width auto for aspect ratio
                 onError={(e) => {
                   // Fallback if image fails to load
                   e.target.onerror = null; // Prevent infinite loop

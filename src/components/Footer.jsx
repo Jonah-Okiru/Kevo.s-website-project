@@ -1,6 +1,6 @@
 // src/components/Footer.jsx
 import { Facebook, Twitter, Instagram, Linkedin, Phone, Mail, MapPin } from 'lucide-react'; // Import social media and contact icons
-
+import logo from '../assets/logo.jpeg'; // Import your logo image
 // Footer component
 const Footer = () => {
   // Current year for copyright
@@ -44,9 +44,11 @@ const Footer = () => {
           {/* Company Info */}
           <div> {/* Company info column */}
             <div className="flex items-center space-x-3 mb-6"> {/* Logo and name container */}
-              <div className="h-10 w-10 bg-blue-600 rounded-lg"></div> {/* Logo placeholder */}
+              <div className="h-14 w-14 bg-blue-600 rounded-lg">
+                <img src={logo} alt="Climate Care Solutions Logo" className='w-14 h-14'/>
+                </div> {/* Logo placeholder */}
               <div> {/* Company text */}
-                <h3 className="text-xl font-bold">Mistcool Africa</h3> {/* Company name */}
+                <h3 className="text-xl font-bold">Climate Care Solutions</h3> {/* Company name */}
                 <p className="text-gray-400 text-sm">Cooling Solutions Experts</p> {/* Tagline */}
               </div>
             </div>
@@ -142,7 +144,7 @@ const Footer = () => {
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm"> {/* Copyright container */}
           <div className="flex flex-col md:flex-row justify-between items-center"> {/* Copyright content */}
             <div className="mb-4 md:mb-0"> {/* Copyright text */}
-              © {currentYear} Mistcool Africa. All rights reserved. {/* Copyright notice */}
+              © {currentYear} Climate Care Solutions. All rights reserved. {/* Copyright notice */}
             </div>
             <div className="flex flex-wrap justify-center gap-6"> {/* Additional links */}
               <a href="#" className="hover:text-white transition">Privacy Policy</a> {/* Privacy policy link */}

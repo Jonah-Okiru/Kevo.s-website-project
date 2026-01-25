@@ -9,7 +9,7 @@ const Testimonials = () => {
       name: "James Kamau", // Client name
       role: "Facility Manager", // Client role
       company: "Nairobi Business Park", // Client company
-      content: "Mistcool Africa installed our office cooling system 3 years ago and it's been running perfectly. Their maintenance team is always prompt and professional.", // Testimonial content
+      content: "Climate Care Solutions installed our office cooling system 3 years ago and it's been running perfectly. Their maintenance team is always prompt and professional.", // Testimonial content
       rating: 5, // Star rating
       imageColor: "bg-blue-100" // Placeholder color
     },

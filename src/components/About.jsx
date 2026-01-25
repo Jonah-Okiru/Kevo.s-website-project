@@ -32,7 +32,7 @@ const About = () => {
                   <Award className="h-8 w-8 text-blue-600" /> {/* Award icon */}
                 </div>
                 <div> {/* Text content */}
-                  <div className="text-3xl font-bold text-gray-800">15+</div> {/* Years number */}
+                  <div className="text-3xl font-bold text-gray-800">5+</div> {/* Years number */}
                   <div className="text-gray-600">Years Experience</div> {/* Label */}
                 </div>
               </div>
@@ -42,11 +42,11 @@ const About = () => {
           {/* Right Column - Content */}
           <div> {/* Text content container */}
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6"> {/* Section title */}
-              About Mistcool Africa
+              About Climate Care Solutions
             </h2>
             <p className="text-lg text-gray-600 mb-6"> {/* Description paragraph 1 */}
-              We are a leading provider of HVAC solutions across Africa, specializing in 
-              residential, commercial, and industrial cooling systems. With over 15 years 
+              We are a leading provider of HVAC solutions across Kenya and East Africa region, specializing in 
+              residential, commercial, and industrial cooling systems. With over 5 years 
               of experience, we deliver energy-efficient and sustainable cooling solutions.
             </p>
             <p className="text-lg text-gray-600 mb-8"> {/* Description paragraph 2 */}
@@ -69,7 +69,7 @@ const About = () => {
             <div className="grid grid-cols-3 gap-6 pt-8 border-t"> {/* Stats grid */}
               <div className="text-center"> {/* Stat 1 */}
                 <Users className="h-8 w-8 text-blue-600 mx-auto mb-2" /> {/* Users icon */}
-                <div className="text-2xl font-bold text-gray-800">50+</div> {/* Stat value */}
+                <div className="text-2xl font-bold text-gray-800">20+</div> {/* Stat value */}
                 <div className="text-gray-600">Expert Staff</div> {/* Stat label */}
               </div>
               <div className="text-center"> {/* Stat 2 */}

@@ -34,11 +34,11 @@ const Hero = () => {
           {/* Stats Section */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-8 border-t border-blue-400"> {/* Statistics grid */}
             <div className="text-center"> {/* Stat item 1 */}
-              <div className="text-3xl md:text-4xl font-bold mb-2">15+</div> {/* Stat value */}
+              <div className="text-3xl md:text-4xl font-bold mb-2">5+</div> {/* Stat value */}
               <div className="text-blue-200">Years Experience</div> {/* Stat label */}
             </div>
             <div className="text-center"> {/* Stat item 2 */}
-              <div className="text-3xl md:text-4xl font-bold mb-2">500+</div>
+              <div className="text-3xl md:text-4xl font-bold mb-2">20+</div>
               <div className="text-blue-200">Projects Completed</div>
             </div>
             <div className="text-center"> {/* Stat item 3 */}
