@@ -35,7 +35,7 @@ const Contact = () => {
     {
       icon: <Phone className="h-6 w-6" />, // Phone icon
       title: "Call Us", // Contact method title
-      details: ["+254 723 456 789", "+254 700 987 654"], // Contact details array
+      details: ["+254 797 801 396", "+254 736 014 223"], // Contact details array
       action: "Call Now" // Action text
     },
     {
@@ -47,7 +47,7 @@ const Contact = () => {
     {
       icon: <MapPin className="h-6 w-6" />, // Location icon
       title: "Visit Us",
-      details: ["Nairobi Office: Westlands", "Mombasa Branch: Nyali"],
+      details: ["Nairobi Office: Ngara"],
       action: "Get Directions"
     },
     {
@@ -105,7 +105,7 @@ const Contact = () => {
                 <div> {/* Emergency text content */}
                   <h4 className="text-xl font-bold mb-2">Emergency Service</h4> {/* Emergency title */}
                   <p className="text-red-100 mb-4">24/7 emergency repair services available</p> {/* Emergency description */}
-                  <div className="text-2xl font-bold">0700 123 456</div> {/* Emergency number */}
+                  <div className="text-2xl font-bold">0797801396, 0736014223</div> {/* Emergency number */}
                 </div>
               </div>
             </div>
