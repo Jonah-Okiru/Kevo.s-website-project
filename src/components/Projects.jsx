@@ -116,8 +116,8 @@ const Projects = () => {
                 {/* Project Details */}
                 <div className="flex items-center justify-between"> {/* Details container */}
                   <div className="text-sm text-gray-500"> {/* Location and size */}
-                    <div>Nairobi, Kenya</div> {/* Project location */}
-                    <div>5,000 sq ft</div> {/* Project size */}
+                    <div>Kenya</div> {/* Project location */}
+                    
                   </div>
                   <button className="text-blue-600 hover:text-blue-700 font-medium flex items-center"> {/* View details button */}
                     View Details
