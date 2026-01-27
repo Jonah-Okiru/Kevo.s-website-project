@@ -22,3 +22,25 @@
 .scale-100 {
   transform: scale(1);
 }
+/* Ensure logos maintain aspect ratio */
+.logo-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optional: Add a subtle animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo-container {
+  animation: fadeInUp 0.5s ease-out forwards;
+  animation-delay: calc(var(--index) * 0.1s);
+}

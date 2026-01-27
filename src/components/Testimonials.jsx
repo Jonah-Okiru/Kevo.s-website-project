@@ -31,6 +31,40 @@ const Testimonials = () => {
     }
   ];
 
+  // Client logos data - actual companies an HVAC business might work with
+  const clientLogos = [
+    {
+      name: "Kenya Power",
+      logo: "/logos/kplc-logo.png", // Placeholder path - update with actual file
+      alt: "Kenya Power Logo"
+    },
+    {
+      name: "Safaricom",
+      logo: "/logos/safaricom-logo.png",
+      alt: "Safaricom Logo"
+    },
+    {
+      name: "Nairobi Hospital",
+      logo: "/logos/nairobi-hospital-logo.jpg",
+      alt: "Nairobi Hospital Logo"
+    },
+    {
+      name: "Safari Park Hotel",
+      logo: "/logos/safari-park-logo.jpg",
+      alt: "Safari Park Hotel Logo"
+    },
+    {
+      name: "Uchumi Supermarkets",
+      logo: "/logos/uchumi-logo.jpg",
+      alt: "Uchumi Supermarkets Logo"
+    },
+    {
+      name: "Bidco Africa",
+      logo: "/logos/bidco-logo.jpg",
+      alt: "Bidco Africa Logo"
+    }
+  ];
+
   return (
     <section className="py-16 md:py-24 bg-gray-50"> {/* Testimonials section */}
       <div className="container mx-auto px-4"> {/* Container with padding */}
@@ -86,15 +120,37 @@ const Testimonials = () => {
         {/* Client Logos */}
         <div className="mt-20 pt-12 border-t border-gray-200"> {/* Client logos section */}
           <p className="text-center text-gray-600 mb-8">Trusted by leading companies</p> {/* Section label */}
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-8 opacity-60"> {/* Logos grid */}
-            {[1, 2, 3, 4, 5, 6].map((i) => ( // Map through logo placeholders
+          
+          {/* Updated Logos Grid with actual images */}
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-6 md:gap-8 items-center"> {/* Logos grid */}
+            {clientLogos.map((client, index) => ( // Map through actual client logos
               <div 
-                key={i}
-                className="h-12 bg-gray-200 rounded-lg flex items-center justify-center text-gray-400 font-bold" // Logo placeholder
+                key={index}
+                className="flex items-center justify-center p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 border border-gray-100" // Logo container with hover effect
               >
-                LOGO {i} {/* Placeholder text */}
+                {/* Client Logo Image */}
+                <img 
+                  src={client.logo} 
+                  alt={client.alt}
+                  className="h-auto w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-80 hover:opacity-100" // Grayscale effect on hover
+                  onError={(e) => { // Fallback in case image doesn't load
+                    e.target.style.display = 'none';
+                    e.target.parentElement.innerHTML = `
+                      <div class="text-center">
+                        <div class="text-gray-400 font-semibold text-sm">${client.name}</div>
+                      </div>
+                    `;
+                  }}
+                />
               </div>
             ))}
+          </div>
+
+          {/* Alternative: If you want to display the company names alongside logos */}
+          <div className="mt-4 text-center">
+            <p className="text-sm text-gray-500">
+              Serving clients across various sectors including healthcare, hospitality, retail, and manufacturing
+            </p>
           </div>
         </div>
       </div>
