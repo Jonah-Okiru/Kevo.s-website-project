@@ -18,27 +18,27 @@ const About = () => {
   const galleryImages = [
     {
       src: "/images/aboutimage1.jpeg",
-      alt: "HVAC Installation Team at work"
+      alt: "Image no 1"
     },
     {
       src: "/images/aboutimage2.jpeg",
-      alt: "Commercial Cooling System Installation"
+      alt: "Image no 2"
     },
     {
       src: "/images/aboutimage3.jpeg",
-      alt: "Residential AC Maintenance"
+      alt: "Image no 3"
     },
     {
       src: "/images/aboutimage4.jpeg",
-      alt: "Industrial Cooling Equipment"
+      alt: "Image no 4"
     },
     {
       src: "/images/aboutimage5.jpeg",
-      alt: "Customer Consultation"
+      alt: "Image no 5"
     },
     {
       src: "/images/aboutimage6.jpeg",
-      alt: ""
+      alt: "Image no 6"
     }
   ];
 

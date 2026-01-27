@@ -3,43 +3,43 @@ import { ExternalLink } from 'lucide-react'; // Import external link icon
 
 // Projects section component
 const Projects = () => {
-  // Projects data array
+  // Projects data array with actual image URLs
   const projects = [
     {
       category: "Commercial", // Project category
       title: "Nairobi Office Tower", // Project title
       description: "Complete HVAC system for 30-story office building", // Project description
-      imageColor: "from-blue-500 to-blue-700" // Gradient colors for placeholder
+      imageUrl: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" // Actual image URL
     },
     {
       category: "Industrial",
       title: "Mombasa Cold Storage",
       description: "Large-scale refrigeration system for seafood export",
-      imageColor: "from-green-500 to-green-700"
+      imageUrl: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       category: "Residential",
       title: "Karen Luxury Villas",
       description: "Smart home cooling system for luxury residential complex",
-      imageColor: "from-purple-500 to-purple-700"
+      imageUrl: "https://images.unsplash.com/photo-1613977257363-707ba9348227?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       category: "Commercial",
       title: "Kisumu Mall",
       description: "Central cooling system for shopping mall",
-      imageColor: "from-orange-500 to-orange-700"
+      imageUrl: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       category: "Industrial",
       title: "Nakuru Factory",
       description: "Process cooling for manufacturing plant",
-      imageColor: "from-red-500 to-red-700"
+      imageUrl: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     },
     {
       category: "Residential",
       title: "Runda Estate Homes",
       description: "Ducted air conditioning for residential estate",
-      imageColor: "from-teal-500 to-teal-700"
+      imageUrl: "https://images.unsplash.com/photo-1560185127-6ed189bf02f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
     }
   ];
 
@@ -83,10 +83,25 @@ const Projects = () => {
               key={index} 
               className="group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 bg-white" // Project card
             >
-              {/* Project Image Placeholder */}
-              <div className={`h-48 bg-gradient-to-br ${project.imageColor} relative overflow-hidden`}> {/* Image container */}
-                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div> {/* Hover overlay */}
-                <div className="absolute top-4 left-4"> {/* Category badge */}
+              {/* Project Image */}
+              <div className="h-48 relative overflow-hidden bg-gray-100"> {/* Image container with fallback background */}
+                {/* Actual Image */}
+                <img 
+                  src={project.imageUrl} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  onError={(e) => {
+                    // Fallback if image fails to load
+                    e.target.style.display = 'none';
+                    e.target.parentElement.className = `h-48 bg-gradient-to-br from-gray-300 to-gray-500 relative overflow-hidden`;
+                  }}
+                />
+                
+                {/* Gradient overlay on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Category badge */}
+                <div className="absolute top-4 left-4">
                   <span className="bg-white/90 backdrop-blur-sm text-sm font-medium px-3 py-1 rounded-full">
                     {project.category} {/* Display category */}
                   </span>
