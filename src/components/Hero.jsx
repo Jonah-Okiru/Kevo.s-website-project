@@ -16,6 +16,12 @@ const backgroundImages = [
   '/images/background9.jpeg',
   '/images/background10.jpeg',
   '/images/background11.jpeg',
+  '/images/background12.jpeg',
+  '/images/background13.jpeg',
+  '/images/background14.jpeg',
+  '/images/background15.jpeg',
+  '/images/background16.jpeg',
+  '/images/background17.jpeg',
 ];
 
 const Hero = () => {

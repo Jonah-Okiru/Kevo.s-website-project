@@ -39,6 +39,50 @@ const About = () => {
     {
       src: "/images/aboutimage6.jpeg",
       alt: "Image no 6"
+    },
+    {
+      src: "/images/aboutimage7.jpeg",
+      alt: "Image no 7"
+    },
+    {
+      src: "/images/aboutimage8.jpeg",
+      alt: "Image no 8"
+    },
+    {
+      src: "/images/aboutimage9.jpeg",
+      alt: "Image no 9"
+    },
+    {
+      src: "/images/aboutimage10.jpeg",
+      alt: "Image no 10"
+    },
+    {
+      src: "/images/aboutimage11.jpeg",
+      alt: "Image no 11"
+    },
+    {
+      src: "/images/aboutimage12.jpeg",
+      alt: "Image no 12"
+    },
+    {
+      src: "/images/aboutimage13.jpeg",
+      alt: "Image no 13"
+    },
+    {
+      src: "/images/aboutimage14.jpeg",
+      alt: "Image no 14"
+    },
+    {
+      src: "/images/aboutimage15.jpeg",
+      alt: "Image no 15"
+    },
+    {
+      src: "/images/aboutimage16.jpeg",
+      alt: "Image no 16"
+    },
+    {
+      src: "/images/aboutimage17.jpeg",
+      alt: "Image no 17"
     }
   ];
 
