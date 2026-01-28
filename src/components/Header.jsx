@@ -1,44 +1,100 @@
 // src/components/Header.jsx
 import { useState } from 'react';
 import { Menu, X, Phone, Mail } from 'lucide-react';
-import logo from '../assets/logo.jpeg'; // Import your logo image
+import { Link, useNavigate } from 'react-router-dom';
+import logo from '../assets/logo.jpeg';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
+
+  // Function to handle navigation with smooth scroll
+  const handleNavigation = (path, sectionId = null) => {
+    // Close mobile menu if open
+    setIsMenuOpen(false);
+    
+    // Check if we're already on the home page
+    if (window.location.pathname === '/' && sectionId) {
+      // Smooth scroll to section on home page
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else if (path === '/' && sectionId) {
+      // Navigate to home page and then scroll to section
+      navigate(path);
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // Navigate to different page
+      navigate(path);
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
       <div className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           
-          {/* Logo Section - Updated with Image */}
+          {/* Logo Section */}
           <div className="flex items-center">
-            <a href="/" className="flex items-center space-x-2"> {/* Make logo clickable */}
+            <button 
+              onClick={() => handleNavigation('/')}
+              className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
+            >
               <img 
-                src={logo} // Use imported logo
-                alt="Climate Care Solutions Logo" // Alt text for accessibility
-                className="h-16 w-auto" // Adjust height, width auto for aspect ratio
+                src={logo}
+                alt="Mistcool Africa Logo"
+                className="h-16 w-auto"
                 onError={(e) => {
-                  // Fallback if image fails to load
-                  e.target.onerror = null; // Prevent infinite loop
-                  e.target.src = "https://via.placeholder.com/150x50/1e40af/ffffff?text=Mistcool+Africa"; // Fallback placeholder
+                  e.target.onerror = null;
+                  e.target.src = "https://via.placeholder.com/150x50/1e40af/ffffff?text=Mistcool+Africa";
                 }}
               />
-              {/* Optional: If you want to keep text as fallback or for screen readers */}
-              <div className="sr-only"> {/* Screen reader only text */}
+              <div className="sr-only">
                 <h1>Mistcool Africa</h1>
                 <p>Cooling Solutions Experts</p>
               </div>
-            </a>
+            </button>
           </div>
 
-          {/* Rest of the component remains the same */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#home" className="text-gray-700 hover:text-blue-600 font-medium">Home</a>
-            <a href="#about" className="text-gray-700 hover:text-blue-600 font-medium">About</a>
-            <a href="#services" className="text-gray-700 hover:text-blue-600 font-medium">Services</a>
-            <a href="#projects" className="text-gray-700 hover:text-blue-600 font-medium">Projects</a>
-            <a href="#contact" className="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+            <button 
+              onClick={() => handleNavigation('/', 'home')}
+              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+            >
+              Home
+            </button>
+            <button 
+              onClick={() => handleNavigation('/', 'about')}
+              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+            >
+              About
+            </button>
+            <button 
+              onClick={() => handleNavigation('/services')}
+              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+            >
+              Services
+            </button>
+            <button 
+              onClick={() => handleNavigation('/', 'projects')}
+              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+            >
+              Projects
+            </button>
+            <button 
+              onClick={() => handleNavigation('/contact')}
+              className="text-gray-700 hover:text-blue-600 font-medium transition-colors"
+            >
+              Contact
+            </button>
           </nav>
 
           {/* Contact Info - Desktop */}
@@ -47,7 +103,10 @@ const Header = () => {
               <Phone className="h-4 w-4 text-blue-600" />
               <span className="text-sm text-gray-700">+254 797 801 396, +254 736 014 223</span>
             </div>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+            <button 
+              onClick={() => handleNavigation('/contact')}
+              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+            >
               Get Quote
             </button>
           </div>
@@ -65,17 +124,45 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-4">
-              <a href="#home" className="text-gray-700 hover:text-blue-600 py-2">Home</a>
-              <a href="#about" className="text-gray-700 hover:text-blue-600 py-2">About</a>
-              <a href="#services" className="text-gray-700 hover:text-blue-600 py-2">Services</a>
-              <a href="#projects" className="text-gray-700 hover:text-blue-600 py-2">Projects</a>
-              <a href="#contact" className="text-gray-700 hover:text-blue-600 py-2">Contact</a>
+              <button 
+                onClick={() => handleNavigation('/', 'home')}
+                className="text-gray-700 hover:text-blue-600 py-2 text-left"
+              >
+                Home
+              </button>
+              <button 
+                onClick={() => handleNavigation('/', 'about')}
+                className="text-gray-700 hover:text-blue-600 py-2 text-left"
+              >
+                About
+              </button>
+              <button 
+                onClick={() => handleNavigation('/services')}
+                className="text-gray-700 hover:text-blue-600 py-2 text-left"
+              >
+                Services
+              </button>
+              <button 
+                onClick={() => handleNavigation('/', 'projects')}
+                className="text-gray-700 hover:text-blue-600 py-2 text-left"
+              >
+                Projects
+              </button>
+              <button 
+                onClick={() => handleNavigation('/contact')}
+                className="text-gray-700 hover:text-blue-600 py-2 text-left"
+              >
+                Contact
+              </button>
               <div className="pt-4 border-t">
                 <div className="flex items-center space-x-2 mb-2">
                   <Phone className="h-4 w-4 text-blue-600" />
                   <span className="text-sm text-gray-700">+254 797 801 396, +254 736 014 223</span>
                 </div>
-                <button className="w-full bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">
+                <button 
+                  onClick={() => handleNavigation('/contact')}
+                  className="w-full bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+                >
                   Get Quote
                 </button>
               </div>

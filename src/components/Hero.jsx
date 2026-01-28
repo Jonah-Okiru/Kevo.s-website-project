@@ -1,6 +1,7 @@
 // src/components/Hero.jsx
 import { ChevronRight } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Array of image paths from the public/images folder
 const backgroundImages = [
@@ -17,31 +18,38 @@ const backgroundImages = [
   '/images/background11.jpeg',
 ];
 
-// Hero section component
 const Hero = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isRotating, setIsRotating] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const interval = setInterval(() => {
-      // Trigger rotation animation
       setIsRotating(true);
       
-      // Change image after rotation starts
       setTimeout(() => {
         setCurrentImageIndex((prevIndex) => 
           (prevIndex + 1) % backgroundImages.length
         );
         
-        // Reset rotation state for next cycle
         setTimeout(() => {
           setIsRotating(false);
         }, 100);
-      }, 800); // Halfway through rotation
-    }, 5000); // Change image every 5 seconds
+      }, 800);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
+
+  // Function to navigate to services page
+  const handleServicesClick = () => {
+    navigate('/services');
+  };
+
+  // Function to navigate to contact page
+  const handleContactClick = () => {
+    navigate('/contact');
+  };
 
   return (
     <section 
@@ -86,7 +94,7 @@ const Hero = () => {
         {/* Dark Overlay for better text readability */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-blue-700/80 z-3" />
         
-        {/* Optional: Add the original pattern overlay */}
+        {/* Pattern overlay */}
         <div 
           className="absolute inset-0 opacity-20 z-3"
           style={{
@@ -105,10 +113,16 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition flex items-center justify-center">
+            <button 
+              onClick={handleServicesClick}
+              className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition flex items-center justify-center cursor-pointer"
+            >
               View Our Services <ChevronRight className="ml-2 h-5 w-5" />
             </button>
-            <button className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition">
+            <button 
+              onClick={handleContactClick}
+              className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition cursor-pointer"
+            >
               Contact Us Today
             </button>
           </div>
@@ -138,5 +152,4 @@ const Hero = () => {
   );
 };
 
-// Export Hero component
 export default Hero;
