@@ -8,6 +8,7 @@ import Contact from './components/Contact'; // Your contact page
 import About from './components/About';
 import Projects from './components/Projects';
 import Footer from './components/Footer'; // Assuming you have a footer
+import Testimonials from './components/Testimonials'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <About />
               <Services />
               <Projects />
+              <Testimonials />
               <Footer />
             </>
           } />
