@@ -41,7 +41,7 @@ const Contact = () => {
     {
       icon: <Mail className="h-6 w-6" />, // Email icon
       title: "Email Us",
-      details: ["info@mistcoolafrica.co.ke", "support@mistcoolafrica.co.ke"],
+      details: ["info@climatecaresolutions.co.ke", "info@climatecaresolutions.co.ke"],
       action: "Send Email"
     },
     {
